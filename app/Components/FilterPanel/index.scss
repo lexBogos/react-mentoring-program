@@ -1,0 +1,32 @@
+.filterPanel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  a:visited {
+    color: rgb(255, 255, 255);
+  }
+
+.typeList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    color: rgb(255, 255, 255);
+}  
+.sortFilterLabel{
+    color: rgb(189,189,189);
+    font-weight: 800;
+}
+
+.sortFilter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+}
