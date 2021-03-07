@@ -9,7 +9,7 @@ module.exports = merge(common, {
     },
     plugins: [
         new webpack.SourceMapDevToolPlugin({
-            filename: '[name].js.map'
+            filename: '[file].map',
         })
     ],
     devtool: "source-map",
