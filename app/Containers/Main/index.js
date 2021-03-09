@@ -5,11 +5,11 @@ import ErrorBoundary from '../../Components/ErrorBoundary';
 import './index.scss';
 
 
-const Main = () => 
+const Main = ({movieList, setModalActive, setModalFields, movieListHook}) => 
     <div className='mainContainer'>
-        <FilterPanel/>
+        <FilterPanel movieList = {movieList} movieListHook={movieListHook}/>
         <ErrorBoundary>
-          <MoviesList/>
+          <MoviesList movieList = {movieList} setModalActive={setModalActive} setModalFields={setModalFields} movieListHook={movieListHook}/>
         </ErrorBoundary>
     </div>
 

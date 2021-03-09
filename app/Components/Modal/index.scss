@@ -1,0 +1,111 @@
+.modal{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0 , 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 999999;
+}
+
+.modal__content{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #232323;
+    height: 90%;
+    width: 30%;
+}
+
+.modalActive{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.closeModal{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+    position: relative;
+    left: 97%;
+    top:-2%;
+    font-weight: 400;
+}
+.closeModal:visited {
+    color:rgb(255, 255, 255);
+    font-weight: 400;
+}
+.addMovie{
+    display: flex;
+    flex-direction: column;
+}
+.addMovie>div>span{
+    color:#f65261;
+    font-size: 20px;
+    left:10%;
+}
+
+.addMovie>div{
+    margin-left:10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.addMovie>div>input{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.addMovie>div>select{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 20px;
+    width: 100%;
+    height: 45px;
+    border-radius: 3px;
+    overflow: hidden;
+    opacity: 0.7;
+    background-color: #555555;
+}
+
+.addMovie>h3{
+    margin-left: 10%;
+    font-weight: 400;
+}
+
+.addMovie>div>button{
+    border: none;
+    border-radius: 3%;
+    color: #fff;
+    cursor: pointer;
+    font-size:16px;
+    font-weight: 400;
+    line-height: 45px;
+    margin: 0 0 2em;
+    max-width: 160px; 
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%; 
+    background-color: rgb(246,82,97);
+}
+
+.addMovie>div>button:active {
+    background-color: rgb(246,82,97);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+.modalButton{
+    flex-direction: row !important;
+    justify-content: space-between;
+}

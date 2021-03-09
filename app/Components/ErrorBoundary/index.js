@@ -1,15 +1,5 @@
 import React from 'react';
 
-
-// function ErrorBoundary(props){
-//     const ErrorTemplate = () => <h2>Error message</h2>
-
-//     let isEverithingOk = false;
-
-//     return <>{isEverithingOk ? props.childre : <ErrorTemplate/>}</>
-
-// }
-
 class ErrorBoundary extends React.Component {
     constructor(props) {
       super(props);

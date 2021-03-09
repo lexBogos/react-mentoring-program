@@ -1,18 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import Header from './Containers/Header';
-import Main from './Containers/Main';
-import Footer from './Containers/Footer';
+import App from './Containers/App'
 import './index.scss';
 
-
-console.log(process.env.TEST);
-
-ReactDOM.render(
+ReactDOM.render(  
     <>
-      <Header />
-      <Main />
-      <Footer />
+      <App />
     </>,
     document.getElementById('root')
   );
