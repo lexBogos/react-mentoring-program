@@ -1,4 +1,8 @@
 .movieCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 500px;
     width: 300px;
     border: 2px solid bisque;
@@ -14,4 +18,29 @@
     margin-right: 20px;
     border: 1px solid grey;
     border-radius: 0.1cm;
+    position: relative;
+    left: 30%;
+    top:-12%;
+}
+
+.movieCard > div {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    position: relative;
+    left: -15%;
+}
+
+.movieCardActions{
+    left: 27% !important;
+    top: -10%;
+}
+
+.movieCardActions > a{
+    text-decoration: none;
+}
+
+.movieCardActions > a:visited {
+    color:rgb(255, 255, 255);
+    font-weight: 400;
 }

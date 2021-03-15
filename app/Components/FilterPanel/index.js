@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.scss';
 
-const FilterPanel = () => 
+const FilterPanel = ({movieList, movieListHook}) => 
     <div className='filterPanel'>
         <div className ='typeList'>
             <a href = ''>ALL</a>
@@ -12,9 +12,18 @@ const FilterPanel = () =>
         </div>
         <div className='sortFilter'>
             <label htmlFor="filterList" className='sortFilterLabel'>SORT BY</label>
-            <select name="filterList" id="filterId">
+            <select name="filterList" id="filterId" onChange={(e)=>{
+                if(e.target.value==='date'){movieList.sort((a,b) => a.realiseDate - b.realiseDate)};
+                if(e.target.value==='name'){movieList.sort((a, b)=>{
+                    if(a.title < b.title) { return -1; }
+                    if(a.title > b.title) { return 1; }
+                    return 0;
+                })};
+                console.log(movieList, e.target.value==='date', e.target.value==='name')
+                movieListHook([...movieList]);
+                }}>
                 <option value="date">RELEASE DATE</option>
-                <option value="saab">RATE</option>
+                <option value="name">NAME</option>
                 <option value="gross">CUMULATIVE WORLDWIDE GROSS</option>
             </select>
         </div>    
