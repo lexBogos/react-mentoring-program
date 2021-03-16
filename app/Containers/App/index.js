@@ -61,14 +61,19 @@ const App = () => {
     const [movieList, movieListHook] = useState(movies);
     const [modalActive, setModalActive] = useState(false);
     const [modalFields, setModalFields] = useState({func: () => {}});
+    const [choosenMovie, setChoosenMovie] = useState(-1);
     return <>
         <Header setModalActive={setModalActive}
                 setModalFields={setModalFields}
+                setChoosenMovie={setChoosenMovie}
+                choosenMovie={choosenMovie}
+                movieList={movieList}
                 />
         <Main movieList = {movieList}
               setModalActive={setModalActive}
               setModalFields={setModalFields}
               movieListHook={movieListHook}
+              setChoosenMovie = {setChoosenMovie}
                 />
         <Footer/>
         <Modal active = {modalActive}

@@ -1,0 +1,26 @@
+.movieDetails {
+    position: absolute;
+    color: #FFFFFF;
+    z-index: 9999;
+    top: 1%;
+    left: 5%;
+    width: 90%;
+    height: 50%;
+    background-color: rgba(0,0,0, 0.7);
+}
+.movieDetails > a {
+    text-decoration: none;
+    position: relative;
+    left: 95%  ;
+}
+.movieDetailsInfo{
+    display: flex;
+    justify-content: space-between;
+}
+.movieDetailsInfo > div{
+    width: 50%;
+}
+
+.movieDetailsInfo > div > h2 {
+    margin: 0;
+}
