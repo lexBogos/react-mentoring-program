@@ -71,7 +71,7 @@ const deleteMovieModalFields = (hook, list, setActive, index) => {
 </div>
 };
 
-const MovieCard = ({title, movieUrl, realiseDate, genre, setModalFields, setModalActive, index, movies}) => 
+const MovieCard = ({title, movieUrl, realiseDate, genre, setModalFields, setModalActive, index, setChoosenMovie}) => 
     <div className='movieCard' >
         <img src={movieUrl} width="240" height="320"/>
         <div>
@@ -90,6 +90,11 @@ const MovieCard = ({title, movieUrl, realiseDate, genre, setModalFields, setModa
                 setModalFields({func:deleteMovieModalFields, index:index})
                 setModalActive(true);
                 }}>delete</a>
+            <a href='#' onClick={(event) => {
+                event.preventDefault();
+                setChoosenMovie(index)
+                window.scrollTo(0, 0)
+                }}>...</a>    
         </div>
     </div>
 

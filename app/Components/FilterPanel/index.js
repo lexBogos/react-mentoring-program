@@ -19,7 +19,6 @@ const FilterPanel = ({movieList, movieListHook}) =>
                     if(a.title > b.title) { return 1; }
                     return 0;
                 })};
-                console.log(movieList, e.target.value==='date', e.target.value==='name')
                 movieListHook([...movieList]);
                 }}>
                 <option value="date">RELEASE DATE</option>
