@@ -1,20 +1,14 @@
 import React from "react";
-import FilterPanel from "../../Components/FilterPanel";
-import MoviesList from "../../Components/MoviesList";
-import ErrorBoundary from "../../Components/ErrorBoundary";
+import FilterPanel from "../../components/FilterPanel";
+import MoviesList from "../../components/MoviesList";
+import ErrorBoundary from "../../components/ErrorBoundary";
 import "./index.scss";
 
-const Main = ({ movieList, setModalActive, setModalFields, movieListHook, setChoosenMovie }) => (
+const Main = () => (
   <div className="mainContainer">
-    <FilterPanel movieList={movieList} movieListHook={movieListHook} />
+    <FilterPanel />
     <ErrorBoundary>
-      <MoviesList
-        movieList={movieList}
-        setModalActive={setModalActive}
-        setModalFields={setModalFields}
-        movieListHook={movieListHook}
-        setChoosenMovie={setChoosenMovie}
-      />
+      <MoviesList/>
     </ErrorBoundary>
   </div>
 );

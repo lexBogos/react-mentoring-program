@@ -1,109 +1,20 @@
 import React from "react";
-import SearchPanel from "../../Components/SearchPanel";
-import AddMovie from "../../Components/AddMovie";
-import MovieDetails from '../../Components/MovieDetails';
+import SearchPanel from "../../components/SearchPanel";
+import AddMovie from "../../components/AddMovie";
+import MovieDetails from '../../components/MovieDetails';
+import { withMovieStoreService } from '../../components/hoc'
+import { connect } from 'react-redux';
+import { onModalDisable, clearMovieInfoPanel, onMovieChosen } from '../../actions';
 import "./index.scss";
 
-const addMovieModalFields = (hook, list, setActive) => {
-  const movieObj = {
-    title: "",
-    realiseDate: "",
-    movieUrl: "",
-    genre: "sci-fi",
-    overview: "",
-    runTime: "",
-  };
-
-  return (
-    <div className="addMovie">
-      <h3>Add Movie</h3>
-      <div>
-        <span>TITLE</span>
-        <input
-          onChange={(event) => {
-            movieObj.title = event.target.value;
-          }}
-        ></input>
-      </div>
-      <div>
-        <span>RELEASE DATE</span>
-        <input
-          onChange={(event) => {
-            movieObj.realiseDate = event.target.value;
-          }}
-        ></input>
-      </div>
-      <div>
-        <span>MOVIE URL</span>
-        <input
-          onChange={(event) => {
-            movieObj.movieUrl = event.target.value;
-          }}
-        ></input>
-      </div>
-      <div>
-        <span>GENRE</span>
-        <select
-          name="genre"
-          id="genre"
-          onChange={(event) => {
-            movieObj.genre = event.target.value;
-          }}
-        >
-          <option value="sci-fi">Sci-Fi</option>
-          <option value="thriller">Thriller</option>
-          <option value="action">Action</option>
-        </select>
-      </div>
-      <div>
-        <span>OVERVIEW</span>
-        <input
-          onChange={(event) => {
-            movieObj.overview = event.target.value;
-          }}
-        ></input>
-      </div>
-      <div>
-        <span>RUNTIME</span>
-        <input
-          onChange={(event) => {
-            movieObj.runTime = event.target.value;
-          }}
-        ></input>
-      </div>
-      <div className="modalButton">
-        <button
-          onClick={() => {
-            setActive(false);
-          }}
-        >
-          RESET
-        </button>
-        <button
-          onClick={() => {
-            hook([...list, { ...movieObj, id: list.length }]);
-            setActive(false);
-          }}
-        >
-          SUBMIT
-        </button>
-      </div>
-    </div>
-  );
-};
-
-const Header = ({ setModalActive, setModalFields, choosenMovie, setChoosenMovie, movieList }) => {
-
+const Header = ({ movies, chosenMovieIndex, isMovieInfoActive, clearMovieInfoPanel, onMovieChosen }) => {
   return (
     <div className="headerContainer">
       <div className="headerImage"></div>
-      {choosenMovie === -1 ? (
+      {!isMovieInfoActive ? (
         <>
           <h1 className="title">Find your movie</h1>
-          <AddMovie
-            setModalFields={setModalFields}
-            func={addMovieModalFields}
-            setModalActive={setModalActive}
+          <AddMovie onMovieChosen={onMovieChosen}
           />
           <div className="searchContainer">
             <SearchPanel />
@@ -111,11 +22,25 @@ const Header = ({ setModalActive, setModalFields, choosenMovie, setChoosenMovie,
         </>
       ) : (
         <>
-            <MovieDetails choosenMovie={choosenMovie} setChoosenMovie={setChoosenMovie} movieList={movieList}/>
+            <MovieDetails 
+              movie={movies[chosenMovieIndex]}
+              clearMovieInfoPanel={clearMovieInfoPanel}
+            />
         </>
       )}
     </div>
   );
 };
 
-export default Header;
+const mapStateToProps = ({ movies, chosenMovieId, chosenMovieIndex, isMovieInfoActive }) => {
+  return {
+    movies,
+    chosenMovieId,
+    chosenMovieIndex,
+    isMovieInfoActive,
+  }
+};
+
+const mapDispatchToProps = {  onModalDisable, clearMovieInfoPanel, onMovieChosen };
+
+export default withMovieStoreService()(connect(mapStateToProps, mapDispatchToProps)(Header));

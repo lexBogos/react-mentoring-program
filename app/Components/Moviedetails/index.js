@@ -1,34 +1,29 @@
 import React, {useEffect, useCallback} from "react";
 import "./index.scss";
 
-const MovieDetails = ({ choosenMovie, setChoosenMovie, movieList }) => {
+const MovieDetails = ({movie, clearMovieInfoPanel}) => {
 
-const titleCallback =  useCallback(()=>{document.title = 'moviePortal'}, [choosenMovie]);
+const titleCallback =  useCallback(()=>{document.title = 'moviePortal'}, [movie]);
 
 useEffect(() => {
-        document.title = movieList[choosenMovie].title
+        document.title = movie.title
         return titleCallback
 });  
 
-const customHookFunction = () => {
-    useEffect(() => {
-        alert('Custom hook example')
-    }), []
-}
-
-const customhook = customHookFunction();
 
   return (
     <div className="movieDetails">
-      <a href="#" onClick={() => {customhook, setChoosenMovie(-1)}}>
+      <a href="#" onClick={() => {
+        clearMovieInfoPanel()
+      }}>
         ✖
       </a>
       <div className='movieDetailsInfo'>
-        <img src={movieList[choosenMovie].movieUrl} width="240" height="320"/>
+        <img src={movie.movieUrl} width="240" height="320"/>
         <div>
-            <h2>{movieList[choosenMovie].title}</h2>
-            <p>{movieList[choosenMovie].description}</p>
-            <span>{movieList[choosenMovie].realiseDate}</span>
+            <h2>{movie.title}</h2>
+            <p>{movie.description}</p>
+            <span>{movie.realiseDate}</span>
         </div>
       </div>
     </div>

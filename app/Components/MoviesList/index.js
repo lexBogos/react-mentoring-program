@@ -1,33 +1,49 @@
-import React from "react";
-import MovieCard from "../MovieCard";
+import React, {useEffect} from 'react';
+import MovieCard from '../MovieCard';
+import { connect } from 'react-redux';
+import { moviesLoaded, moviesRequested, onMovieChosen, showMovieInfoPanel } from '../../actions';
+import { withMovieStoreService } from '../hoc';
+
 import "./index.scss";
 
 const MoviesList = ({
-  movieList: movies,
-  setModalFields,
-  setModalActive,
-  movieListHook,
-  setChoosenMovie,
-}) => (
-  <div className="movieList">
-    {movies.map((movie, index) => (
+  movies,
+  loading,
+  movieStoreService,
+  moviesLoaded,
+  moviesRequested,
+  onMovieChosen,
+  showMovieInfoPanel
+}) => { 
+    useEffect(() => {
+      moviesRequested()
+      movieStoreService.getMovies().then((data)=> {
+        moviesLoaded(data);
+      });
+    }, [])
+  if(loading){
+    return <h2>Loading...</h2>
+  }  
+  return <div className="movieList">
+    {movies.map((movie) => (
       <MovieCard
-        title={movie.title}
-        description={movie.description}
+        movie={movie}
         key={movie.id}
-        movieUrl={movie.movieUrl}
-        realiseDate={movie.realiseDate}
-        genre={movie.genre}
-        index={index}
-        setModalFields={setModalFields}
-        setModalActive={setModalActive}
-        movies={movies}
-        movieListHook={movieListHook}
-        setChoosenMovie={setChoosenMovie}
+        onMovieChosen={onMovieChosen}
+        showMovieInfoPanel={showMovieInfoPanel}
       />
     ))}
     ;
   </div>
-);
+};
 
-export default MoviesList;
+const mapStateToProps = ({ movies, loading }) => {
+  return {
+    movies,
+    loading
+  }
+};
+
+const mapDispatchToProps = {moviesLoaded, moviesRequested, onMovieChosen, showMovieInfoPanel};
+
+export default withMovieStoreService()(connect(mapStateToProps, mapDispatchToProps)(MoviesList));
