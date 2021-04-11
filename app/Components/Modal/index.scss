@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
 }
-.addMovie>div>span{
+.addMovie>span{
     color:#f65261;
     font-size: 20px;
     left:10%;
@@ -57,14 +57,14 @@
 
 }
 
-.addMovie>div>input{
+.addMovie>input{
     margin-top: 10px;
     margin-bottom: 20px;
     width: 100%;
     font-size: 20px;
 }
 
-.addMovie>div>select{
+.addMovie>select{
     margin-top: 10px;
     margin-bottom: 20px;
     width: 100%;
@@ -82,7 +82,7 @@
     font-weight: 400;
 }
 
-.addMovie>div>button{
+.addMovie>button{
     border: none;
     border-radius: 3%;
     color: #fff;
@@ -99,7 +99,7 @@
     background-color: rgb(246,82,97);
 }
 
-.addMovie>div>button:active {
+.addMovie>button:active {
     background-color: rgb(246,82,97);
     box-shadow: 0 5px #666;
     transform: translateY(4px);
