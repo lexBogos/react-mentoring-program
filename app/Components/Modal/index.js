@@ -1,8 +1,8 @@
 import React from 'react';
 import { moviesLoaded, moviesRequested, onMovieEdit, onMovieRemove, onMovieAdd, onModalDisable } from '../../actions';
 import { connect } from 'react-redux';
-import { withMovieStoreService } from '../hoc'
-import {EditMovieModalFields, DeleteMovieModalFields, AddMovieModalFields} from './payload'
+import { withMovieStoreService } from '../hoc';
+import {EditMovieModalFields, DeleteMovieModalFields, AddMovieModalFields} from './payload';
 import './index.scss';
 
 const Modal = ({modalActionType,
