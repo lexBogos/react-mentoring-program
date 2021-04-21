@@ -101,6 +101,12 @@ const reducer = (state = initialState, action) => {
             }
         }
 
+        case 'SEARCH_PANEL_INPUT_ON_CHANGE':
+            return{
+                ...state,
+                searchPanelInputValue: action.payload
+            }
+
         default:
             return state;   
     }    

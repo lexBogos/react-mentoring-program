@@ -46,7 +46,7 @@ const EditMovieModalFields = ({
         onSubmit={values => {
           setTimeout(() => {
             movieStoreService.updateMovieData({movieId: data.id, movieData: values}).then((res)=>{
-              console.log(res)
+              console.log(res);
               onMovieEdit({...values, id: data.id});
               onModalDisable();
             });
@@ -166,7 +166,7 @@ const AddMovieModalFields = ({ onMovieAdd, movieStoreService }) => {
         onSubmit={values => {
           setTimeout(() => {
             movieStoreService.updateMovieData({ movieData: values }).then((res)=>{
-              console.log(res)
+              console.log(res);
               onMovieAdd(values);
             });
           }, 0);

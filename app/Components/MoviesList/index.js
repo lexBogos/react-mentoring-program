@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import MovieCard from '../MovieCard';
 import { connect } from 'react-redux';
-import { moviesLoaded, moviesRequested, onMovieChosen, showMovieInfoPanel } from '../../actions';
+import { moviesLoaded, moviesRequested, onMovieChosen } from '../../actions';
 import { withMovieStoreService } from '../hoc';
 
 import "./index.scss";
@@ -13,7 +13,6 @@ const MoviesList = ({
   moviesLoaded,
   moviesRequested,
   onMovieChosen,
-  showMovieInfoPanel
 }) => { 
     useEffect(() => {
       moviesRequested()
@@ -30,7 +29,6 @@ const MoviesList = ({
         movie={movie}
         key={movie.id}
         onMovieChosen={onMovieChosen}
-        showMovieInfoPanel={showMovieInfoPanel}
       />
     ))}
     ;
@@ -44,6 +42,6 @@ const mapStateToProps = ({ movies, loading }) => {
   }
 };
 
-const mapDispatchToProps = {moviesLoaded, moviesRequested, onMovieChosen, showMovieInfoPanel};
+const mapDispatchToProps = {moviesLoaded, moviesRequested, onMovieChosen};
 
 export default withMovieStoreService()(connect(mapStateToProps, mapDispatchToProps)(MoviesList));
