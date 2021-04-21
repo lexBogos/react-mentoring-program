@@ -73,6 +73,13 @@ const filterMovies = category => {
         category: category
     }
 }
+
+const onSearchPanelInputChange = inputValue => {
+    return {
+        type: 'SEARCH_PANEL_INPUT_ON_CHANGE',
+        payload: inputValue
+    }
+}
  
 
 export {
@@ -87,4 +94,5 @@ export {
     showMovieInfoPanel,
     sortMovies,
     filterMovies,
+    onSearchPanelInputChange,
 };

@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import './index.scss';
 
-const MovieCard = ({movie, showMovieInfoPanel, onMovieChosen}) => 
-    <div className='movieCard' >
+const MovieCard = ({movie, onMovieChosen}) => {
+    const history = useHistory();
+    return <div className='movieCard' >
         <img src={movie.movieUrl} width="240" height="320"/>
         <div>
             <h3>{movie.title}</h3>
@@ -21,11 +23,12 @@ const MovieCard = ({movie, showMovieInfoPanel, onMovieChosen}) =>
                 }}>delete</a>
             <a href='#' onClick={(event) => {
                 event.preventDefault();
-                showMovieInfoPanel(movie.id);
                 window.scrollTo(0, 0);
+                history.push(`/movie/${movie.title}`)
                 }}>...</a>    
         </div>
     </div>
+    }
 
 MovieCard.propTypes = {
     movie: PropTypes.object.isRequired,

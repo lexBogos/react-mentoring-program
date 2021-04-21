@@ -6,6 +6,7 @@
     height: 500px;
     width: 300px;
     border: 2px solid bisque;
+    border-radius: 15px;
     text-align: center;
     color:rgb(189,189,189);
 }
@@ -38,6 +39,7 @@
 
 .movieCardActions > a{
     text-decoration: none;
+    color:rgb(255, 255, 255);
 }
 
 .movieCardActions > a:visited {
