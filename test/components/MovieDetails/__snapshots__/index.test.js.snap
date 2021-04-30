@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetails component render MovieDetails component toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="movieDetails"
+  >
+    <a
+      class="closeMovieDetails"
+      href="/"
+    >
+      ✖
+    </a>
+    <div
+      class="movieDetailsInfo"
+    >
+      <img
+        height="320"
+        width="240"
+      />
+      <div>
+        <h2>
+          Goodfellas
+        </h2>
+        <p />
+        <span>
+          1990
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

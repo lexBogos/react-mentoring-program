@@ -16,7 +16,7 @@ const MovieDetails = ({ movie, clearMovieInfoPanel }) => {
 
   return movie ? (
     <div className="movieDetails">
-      <Link to="/" onClick={() => clearMovieInfoPanel()}>
+      <Link to="/" className="closeMovieDetails" onClick={() => clearMovieInfoPanel()}>
         ✖
       </Link>
       <div className="movieDetailsInfo">
@@ -30,7 +30,7 @@ const MovieDetails = ({ movie, clearMovieInfoPanel }) => {
     </div>
   ) : (
     <div className="movieDetails">
-      <Link to="/" onClick={() => clearMovieInfoPanel()}>
+      <Link to="/" className="closeMovieDetails" onClick={() => clearMovieInfoPanel()}>
         ✖
       </Link>
       <h1>Movie not found!</h1>

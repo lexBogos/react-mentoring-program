@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component render Header component toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="headerContainer"
+  >
+    <div
+      class="headerImage"
+    />
+    <h1
+      class="title"
+    >
+      Find your movie
+    </h1>
+    <button
+      class="addMovieButton"
+    >
+      + ADD MOVIE
+    </button>
+    <div
+      class="searchContainer"
+    >
+      <input
+        class="searchInput"
+        placeholder="What do you want to see ?"
+      />
+      <button
+        class="btn btn-1"
+      >
+        SEARCH
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

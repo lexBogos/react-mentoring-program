@@ -6,30 +6,30 @@ import './index.scss';
 const FilterPanel = ({movies, sortMovies, filterMovies}) => 
     <div className='filterPanel'>
         <div className ='typeList'>
-            <a href = '#' onClick={(event) => {
+            <a href = '#' className='filterLink' onClick={(event) => {
                 event.preventDefault();
                 filterMovies('ALL');
                 }}>ALL</a>
-            <a href = '#' onClick={(event) => {
+            <a href = '#' className='filterLink' onClick={(event) => {
                 event.preventDefault();
                 filterMovies('DOCUMENTARY');
                 }}>DOCUMENTARY</a>
-            <a href = '#' onClick={(event) => {
+            <a href = '#' className='filterLink' onClick={(event) => {
                 event.preventDefault();
                 filterMovies('COMEDY');
                 }}>COMEDY</a>
-            <a href = '#' onClick={(event) => {
+            <a href = '#' className='filterLink' onClick={(event) => {
                 event.preventDefault();
                 filterMovies('HORROR');
                 }}>HORROR</a>
-            <a href = '#' onClick={(event) => {
+            <a href = '#' className='filterLink' onClick={(event) => {
                 event.preventDefault();
                 filterMovies('CRIME');
                 }}>CRIME</a>
         </div>
         <div className='sortFilter'>
             <label htmlFor="filterList" className='sortFilterLabel'>SORT BY</label>
-            <select name="filterList" id="filterId" onChange={(e)=>{
+            <select name="filterList" className="filterList" id="filterId" onChange={(e)=>{
                 const moviesCopy = JSON.parse(JSON.stringify(movies));
                 if(e.target.value==='date'){moviesCopy.sort((a,b) => a.realiseDate - b.realiseDate)};
                 if(e.target.value==='name'){moviesCopy.sort((a, b)=>{

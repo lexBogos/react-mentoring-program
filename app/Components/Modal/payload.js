@@ -44,13 +44,11 @@ const EditMovieModalFields = ({
         }}
         validationSchema={EditMovieSchema}
         onSubmit={values => {
-          setTimeout(() => {
             movieStoreService.updateMovieData({movieId: data.id, movieData: values}).then((res)=>{
               console.log(res);
               onMovieEdit({...values, id: data.id});
               onModalDisable();
             });
-          }, 0);
         }}
       >
         {({handleSubmit, values, errors}) => (
@@ -80,7 +78,7 @@ const EditMovieModalFields = ({
             <Field name="rate" value={values.rate} />
             {errors.rate && <div>{errors.rate}</div>}
             <button type="submit">Submit</button>
-            <button onClick={() => {onModalDisable()}}>RESET</button>
+            <button type="button" onClick={() => {onModalDisable()}}>RESET</button>
           </Form>
         )}
       </Formik>
@@ -118,15 +116,6 @@ const DeleteMovieModalFields = ({
 };
 
 const AddMovieModalFields = ({ onMovieAdd, movieStoreService }) => {
-  const movieObj = {
-    id: Math.round(Math.random() * 1000000000) + "", //Replace with UUID
-    title: "",
-    realiseDate: "",
-    movieUrl: "",
-    genre: "sci-fi",
-    overview: "",
-    runTime: "",
-  };
 
   const AddMovieSchema = Yup.object().shape({
     title: Yup.string()
@@ -151,7 +140,7 @@ const AddMovieModalFields = ({ onMovieAdd, movieStoreService }) => {
 
   return (
     <>
-      <h3>Edit Movie</h3>
+      <h3>Add Movie</h3>
       <Formik
         initialValues={{
           id: Math.round(Math.random() * 1000000000) + "", //Replace with UUID
@@ -164,12 +153,10 @@ const AddMovieModalFields = ({ onMovieAdd, movieStoreService }) => {
         }}
         validationSchema={AddMovieSchema}
         onSubmit={values => {
-          setTimeout(() => {
             movieStoreService.updateMovieData({ movieData: values }).then((res)=>{
               console.log(res);
               onMovieAdd(values);
             });
-          }, 0);
         }}
       >
         {({handleSubmit, values, errors}) => (

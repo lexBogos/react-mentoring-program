@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoMatch component render NoMatch component toMatchSnapshot 1`] = `
+"<NoMatch>
+  <h1>
+    No match for 
+    <code>
+      /another-route
+    </code>
+     (Error 404)
+  </h1>
+</NoMatch>"
+`;
