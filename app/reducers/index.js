@@ -11,11 +11,13 @@ const reducer = (state = initialState, action) => {
     switch(action.type){
         case 'MOVIES_REQUESTED':
             return {
+                ...state,
                 movies: [],
                 loading: true
             }
         case 'MOVIES_LOADED':
             return {
+                ...state,
                 movies: action.payload,
                 loading: false
             }
@@ -28,7 +30,6 @@ const reducer = (state = initialState, action) => {
                     modalActionType: action.modalActionType
                 }
         case 'MOVIE_REMOVE':
-            return (() => {
                 const moviesCopy = JSON.parse(JSON.stringify(state.movies));
                 const isRemoveLegal = state.chosenMovieIndex >= 0 ? 1 : 0;
                 moviesCopy.splice(state.chosenMovieIndex, isRemoveLegal);
@@ -36,23 +37,19 @@ const reducer = (state = initialState, action) => {
                     ...state,
                     movies: moviesCopy,
                     chosenMovieIndex: undefined,
-                } 
-            })(); 
-                   
+                }      
         case 'MOVIE_EDIT':
-            const moviesCopy = JSON.parse(JSON.stringify(state.movies));
-            moviesCopy[state.chosenMovieIndex] = action.payload;
+            const moviesCopyEdit = JSON.parse(JSON.stringify(state.movies));
+            moviesCopyEdit[state.chosenMovieIndex] = action.payload;
             return {
                 ...state,
-                movies: moviesCopy,
+                movies: moviesCopyEdit,
             }
-        
         case 'MOVIE_ADD':
             return {
                 ...state,
-                movies: [...state.movies, action.payload]
+                movies: [...state.movies, action.payload],
             }    
-
         case 'DISABLE_MODAL':
             return {
                 ...state,

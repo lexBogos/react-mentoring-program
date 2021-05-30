@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesList component should return component with MoviesList component if modalActionType is "REMOVE_MOVIE" 1`] = `
+<DocumentFragment>
+  <h2>
+    Loading...
+  </h2>
+</DocumentFragment>
+`;

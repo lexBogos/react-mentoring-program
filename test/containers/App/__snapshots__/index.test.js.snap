@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component render App component toMatchSnapshot 1`] = `
+"<BrowserRouter>
+  <Switch>
+    <Route path=\\"/\\" exact={true}>
+      <Component />
+      <Main />
+      <Component />
+    </Route>
+    <Route path=\\"/movie/:id\\" exact={true}>
+      <Component />
+      <Main />
+      <Component />
+    </Route>
+    <Route path=\\"*\\">
+      <NoMatch />
+    </Route>
+  </Switch>
+  <Footer />
+</BrowserRouter>"
+`;

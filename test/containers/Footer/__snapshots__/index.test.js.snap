@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component render Footer component toMatchSnapshot 1`] = `
+"<div className=\\"footerContainer\\">
+  <h3 className=\\"footerText\\">
+    <b>
+      netflix
+    </b>
+    roulette
+  </h3>
+</div>"
+`;

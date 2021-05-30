@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main component render Main component toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="mainContainer"
+  >
+    <div
+      class="filterPanel"
+    >
+      <div
+        class="typeList"
+      >
+        <a
+          class="filterLink"
+          href="#"
+        >
+          ALL
+        </a>
+        <a
+          class="filterLink"
+          href="#"
+        >
+          DOCUMENTARY
+        </a>
+        <a
+          class="filterLink"
+          href="#"
+        >
+          COMEDY
+        </a>
+        <a
+          class="filterLink"
+          href="#"
+        >
+          HORROR
+        </a>
+        <a
+          class="filterLink"
+          href="#"
+        >
+          CRIME
+        </a>
+      </div>
+      <div
+        class="sortFilter"
+      >
+        <label
+          class="sortFilterLabel"
+          for="filterList"
+        >
+          SORT BY
+        </label>
+        <select
+          class="filterList"
+          id="filterId"
+          name="filterList"
+        >
+          <option
+            value="date"
+          >
+            RELEASE DATE
+          </option>
+          <option
+            value="name"
+          >
+            NAME
+          </option>
+          <option
+            value="rate"
+          >
+            RATE
+          </option>
+        </select>
+      </div>
+    </div>
+    <h1>
+      Smth went wrong!
+    </h1>
+  </div>
+</DocumentFragment>
+`;

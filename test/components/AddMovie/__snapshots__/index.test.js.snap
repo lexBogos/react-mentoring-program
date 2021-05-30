@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddMovie component render AddMovie component toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="addMovieButton"
+  >
+    + ADD MOVIE
+  </button>
+</DocumentFragment>
+`;

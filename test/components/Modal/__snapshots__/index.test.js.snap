@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal component should return component with AddMovieModalFields component if modalActionType is "MOVIE_ADD" 1`] = `
+<DocumentFragment>
+  <div
+    class="modal modalActive"
+  >
+    <div
+      class="modal__content"
+    >
+      <a
+        class="closeModal"
+        href="#"
+      >
+        ✖
+      </a>
+      <h3>
+        Add Movie
+      </h3>
+      <form
+        action="#"
+        class="addMovie"
+      >
+        <input
+          name="title"
+          value=""
+        />
+        <input
+          name="description"
+          value=""
+        />
+        <input
+          name="movieUrl"
+          value=""
+        />
+        <input
+          name="realiseDate"
+          value=""
+        />
+        <select
+          name="genre"
+        >
+          <option
+            value="Action"
+          >
+            Action
+          </option>
+          <option
+            value="Biography"
+          >
+            Biography
+          </option>
+          <option
+            value="Crime"
+          >
+            Crime
+          </option>
+          <option
+            value="Drama"
+          >
+            Drama
+          </option>
+          <option
+            value="Sci-Fi"
+          >
+            Sci-Fi
+          </option>
+        </select>
+        <input
+          name="rate"
+          value=""
+        />
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Modal component should return component with DeleteMovieModalFields component if modalActionType is "REMOVE_MOVIE" 1`] = `
+<DocumentFragment>
+  <div
+    class="modal modalActive"
+  >
+    <div
+      class="modal__content"
+    >
+      <a
+        class="closeModal"
+        href="#"
+      >
+        ✖
+      </a>
+      <div
+        class="addMovie"
+      >
+        <h3>
+          Delete Movie
+        </h3>
+        <div>
+          <span>
+            Are you sure want to delete this movie ?
+          </span>
+        </div>
+        <div
+          class="modalButton"
+        >
+          <button>
+            CONFIRM
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Modal component should return component with EditMovieModalFields component if modalActionType is "EDIT_MOVIE" 1`] = `
+<DocumentFragment>
+  <div
+    class="modal modalActive"
+  >
+    <div
+      class="modal__content"
+    >
+      <a
+        class="closeModal"
+        href="#"
+      >
+        ✖
+      </a>
+      <h3>
+        Edit Movie
+      </h3>
+      <form
+        action="#"
+        class="addMovie"
+      >
+        <input
+          name="title"
+          value="Goodfellas"
+        />
+        <input
+          name="description"
+          value=""
+        />
+        <input
+          name="movieUrl"
+          value=""
+        />
+        <input
+          name="realiseDate"
+          value="1990"
+        />
+        <select
+          name="genre"
+        >
+          <option
+            value="Action"
+          >
+            Action
+          </option>
+          <option
+            value="Biography"
+          >
+            Biography
+          </option>
+          <option
+            value="Crime"
+          >
+            Crime
+          </option>
+          <option
+            value="Drama"
+          >
+            Drama
+          </option>
+          <option
+            value="Sci-Fi"
+          >
+            Sci-Fi
+          </option>
+        </select>
+        <input
+          name="rate"
+          value="4.9"
+        />
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+        <button
+          type="button"
+        >
+          RESET
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Modal component should return component without content if there is no modalActionType 1`] = `
+<DocumentFragment>
+  <div
+    class="modal"
+  >
+    <div
+      class="modal__content"
+    >
+      <a
+        class="closeModal"
+        href="#"
+      >
+        ✖
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
